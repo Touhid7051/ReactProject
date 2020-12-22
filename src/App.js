@@ -59,7 +59,8 @@ togglePersonsHandler = () =>{
 
   render(){
     const style = {
-      backgroundColor : 'white',
+      backgroundColor : 'green',
+      color: 'white',
       font : 'inherit',
       border: '1px solid blue',
       padding: '8px',
@@ -81,13 +82,24 @@ togglePersonsHandler = () =>{
         })}
           
         </div>
+
       );
+      style.backgroundColor = 'red';
+    }
+
+    let classes = [];
+    if(this.state.persons.length <=2){
+      classes.push('red');
+    }
+
+    if(this.state.persons.length <=1){
+      classes.push('bold');
     }
 
     return(
       <div className ="App" >
         <h1>HI</h1>
-        <p>This is working</p>
+        <p className={classes.join(' ')}>This is working</p>
         <button 
         style={style}
         onClick={this.togglePersonsHandler.bind(this,'Meem')}>
