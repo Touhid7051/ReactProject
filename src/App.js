@@ -1,4 +1,4 @@
-import './App.css';
+import classes from './App.css';
 import React,{Component, createElement} from 'react';
 import Person from './Person/Person' ;
 
@@ -62,6 +62,7 @@ togglePersonsHandler = () =>{
     
 
     let persons = null;
+    let btnClass='';
     if(this.state.showPersons){
 
       persons =(
@@ -78,28 +79,26 @@ togglePersonsHandler = () =>{
         </div>
 
       );
-      //style.backgroundColor = 'red';
-      //style[':hover']={
-      //      backgroundColor:'salmon',
-      //      color: 'black',
-      //}
+
+      btnClass=classes.Red;
+      
     }
 
-    let classes = [];
+    let assignedClasses = [];
     if(this.state.persons.length <=2){
-      classes.push('red');
+      assignedClasses.push(classes.red); //classes =['red']
     }
 
     if(this.state.persons.length <=1){
-      classes.push('bold');
+      assignedClasses.push(classes.bold); //classes= ['red',bold]
     }
 
     return(
       
-      <div className ="App" >
+      <div className ={classes.App} >
         <h1>HI</h1>
-        <p className={classes.join(' ')}>This is working</p>
-        <button className="button"
+        <p className={assignedClasses.join(' ')}>This is working</p>
+        <button className={btnClass}
         onClick={this.togglePersonsHandler.bind(this,'Meem')}>
         Toggle Persons
         </button>
