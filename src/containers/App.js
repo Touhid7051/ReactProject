@@ -1,6 +1,6 @@
 import classes from './App.css';
 import React,{Component, createElement} from 'react';
-import Person from './Person/Person' ;
+import Person from '../components/Person/Person' ;
 
 
 class App extends Component{
@@ -114,6 +114,3 @@ togglePersonsHandler = () =>{
 }
 
 export default App;
-
-
-
