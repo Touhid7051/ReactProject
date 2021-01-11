@@ -27,9 +27,9 @@ class App extends Component{
   componentDidMount(){
     console.log('[App.js] componentDidMount');
   }
-  componentWillMount(){
-    console.log('[App.js] componentWillMount');
-  }
+  //componentWillMount(){
+    //console.log('[App.js] componentWillMount');
+  //}
   switchNameHandler =(newName) => {
     //console.log('Clicked');
     //DON'Do THIS: this.state.persons[0].name = 'Touhid';
