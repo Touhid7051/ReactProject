@@ -10,7 +10,20 @@ const Cockpit = (props) => {
             ()=>{
               alert('Saved data to cloud');
             },1000);
+          return () => {
+            console.log('[Cockpit.js] cleanup work in useEffect');
+          };
         },[]); //we can use many useEffects for different components like [props.persons] and set timeouts
+        
+        useEffect(
+          ()=>{
+            console.log('[Cockpit.js] 2nd useEffect');
+            return () => {
+              console.log('[Cockpit.js] cleanup work in 2nd useEffect');
+            };
+          });
+        
+        
           let btnClass='';
           if(props.showPersons){
               btnClass=classes.Red;
