@@ -1,10 +1,16 @@
 import React,{ useEffect } from 'react';
 import classes from './Cockpit.css';
 const Cockpit = (props) => {
-        useEffect(() => {
+        useEffect(
+          () => {
           // Update the document title using the browser API
           console.log('[Cockpit.js] useEffect');
-        });
+          //Http request...
+          setTimeout(
+            ()=>{
+              alert('Saved data to cloud');
+            },1000);
+        },[]); //we can use many useEffects for different components like [props.persons] and set timeouts
           let btnClass='';
           if(props.showPersons){
               btnClass=classes.Red;
