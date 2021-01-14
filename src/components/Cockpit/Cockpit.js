@@ -6,12 +6,11 @@ const Cockpit = (props) => {
           // Update the document title using the browser API
           console.log('[Cockpit.js] useEffect');
           //Http request...
-          const timer = setTimeout(
+          setTimeout(
             ()=>{
               alert('Saved data to cloud');
             },1000);
           return () => {
-            clearTimeout(timer);
             console.log('[Cockpit.js] cleanup work in useEffect');
           };
         },[]); //we can use many useEffects for different components like [props.persons] and set timeouts
