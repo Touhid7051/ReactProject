@@ -2,6 +2,8 @@ import classes from './App.css';
 import React,{Component} from 'react';
 import Persons from '../components/Person/Persons' ;
 import Cockpit from '../components/Cockpit/Cockpit';
+import withClass from '../hoc/withClass';
+import Aux from '../hoc/Auxiliary';
 
 
 class App extends Component{
@@ -97,24 +99,24 @@ togglePersonsHandler = () =>{
 
     return(
       
-      <div className ={classes.App} >
-      <button 
-      onClick={() => 
-               {this.setState({ showCockpit:false })} }>Remove Cockpit</button>
-        {this.state.showCockpit ? (
-        <Cockpit
-          title={this.props.appTitle}
-          showPersons={this.state.showPersons}
-          personsLength={this.state.persons.length}
-          clicked={this.togglePersonsHandler} />
-          ): null}
-        {persons}
+      <Aux>
+        <button 
+        onClick={() => 
+                {this.setState({ showCockpit:false })} }>Remove Cockpit</button>
+          {this.state.showCockpit ? (
+          <Cockpit
+            title={this.props.appTitle}
+            showPersons={this.state.showPersons}
+            personsLength={this.state.persons.length}
+            clicked={this.togglePersonsHandler} />
+            ): null}
+          {persons}
     
-      </div>
+      </Aux>
       
     );
   // return React.createElement('div' , {className :"App"} ,React.createElement('h1' , null ,'hello' ));
   }
 }
 
-export default App;
+export default withClass(App, classes.App);
