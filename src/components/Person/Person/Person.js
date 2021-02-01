@@ -1,11 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import classes from './Person.css';
 import Aux from '../../../hoc/Auxiliary';
+import withClass from "../../../hoc/withClass";
 
 
 
 
-const person = (props) => {
+const Person = (props) => {
     console.log('[Person.js] rendering');
     return (
         <Aux>
@@ -18,4 +19,4 @@ const person = (props) => {
 
 };
 
-export default person;
+export default withClass (Person, classes.Person);
